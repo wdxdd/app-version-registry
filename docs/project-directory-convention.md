@@ -21,7 +21,9 @@ projects/
 
 ## 标准渠道
 
-- iOS：`testflight`、`production`
-- Android：`internalTesting`、`production`
+- 通用候选包：`releaseCandidate`
+- iOS 测试分发：`testflight`
+- Android 测试分发：`internalTesting`
+- 正式分发：`production`
 
-如果项目存在其他受控渠道，必须先在项目 README 中说明，再扩展 Schema；不能临时拼写新渠道名。
+`releaseCandidate` 表示本机安装的 Release 候选包，不等于 TestFlight 或 Google Play 测试轨道。它可以没有 `storeUrl`，用于验证版本检查状态；要验证“去升级”，必须配置真实分发地址。

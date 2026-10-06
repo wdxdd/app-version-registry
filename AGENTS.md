@@ -11,15 +11,28 @@
 - `schemas/`：版本清单 JSON Schema 及 Schema 说明。
 - `docs/`：跨项目使用、修改、验证和检索规则。
 
+## 渠道阶段
+
+每个平台的版本清单按阶段维护：
+
+- `releaseCandidate`：本机安装 Release 候选包，验证版本检查流程；可以没有 `storeUrl`。
+- `testflight`：iOS TestFlight 测试分发。
+- `internalTesting`：Android Google Play 内部测试分发。
+- `production`：正式 App Store / Google Play 分发。
+
+`testflight` 只用于 iOS，`internalTesting` 只用于 Android。`releaseCandidate` 和 `production` 可按平台使用。
+
 ## 智能体检索规则
 
 1. 先读取根目录 `README.md` 与本文件。
 2. 使用当前项目的稳定项目标识定位 `projects/<project-id>/`。
 3. 只读取该项目的 `version-manifest.json`，不得用其他项目目录推断当前项目版本。
-4. 先按 `Platform.OS` 选择 `ios` 或 `android`，再按构建渠道选择 `testflight`、`internalTesting` 或 `production`。
-5. 缺少平台、渠道、版本、构建号或有效分发地址时，客户端必须返回“暂无法检查”，不得当作“已是最新”。
-6. 版本比较先比较 `version`，同版本时比较 `buildNumber`。
-7. 只有明确为更新可用且有可用 `storeUrl` 时，才允许展示“去升级”。
+4. 先按 `Platform.OS` 选择 `ios` 或 `android`，再按构建渠道选择 `releaseCandidate`、`testflight`、`internalTesting` 或 `production`。
+5. 渠道必须与构建产物和分发方式一致：本机 Release 候选包使用 `releaseCandidate`，TestFlight 使用 `testflight`，Google Play 测试使用 `internalTesting`，正式商店使用 `production`。
+6. 缺少平台、渠道、版本或构建号时，客户端必须返回“暂无法检查”，不得当作“已是最新”。
+7. 版本比较先比较 `version`，同版本时比较 `buildNumber`。
+8. 只有明确为更新可用且有可用 `storeUrl` 时，才允许展示可执行的“去升级”。
+9. `releaseCandidate` 没有 `storeUrl` 时仍可返回“有可用更新”，但点击升级必须提示当前测试构建没有可用的官方升级渠道，不得打开伪造地址。
 
 ## 修改规则
 

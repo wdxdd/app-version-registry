@@ -26,11 +26,30 @@ GitHub Raw 地址格式：
 https://raw.githubusercontent.com/wdxdd/app-version-registry/main/projects/<project-id>/version-manifest.json
 ```
 
+## 渠道阶段
+
+每个平台最多按以下三个发布阶段维护版本信息：
+
+1. `releaseCandidate`：本机安装 Release 候选包，验证版本读取、远程检索和状态逻辑。该阶段可以没有升级地址。
+2. `testflight`（iOS）或 `internalTesting`（Android）：通过平台测试分发渠道验证真实升级入口。
+3. `production`：通过 App Store 或 Google Play 正式分发。
+
 ## 修改原则
 
 1. 每个项目只使用一个稳定的 `<project-id>` 目录，优先使用应用包名 / Bundle ID。
-2. iOS 与 Android 分开维护；测试渠道与正式渠道分开维护。
+2. iOS 与 Android 分开维护；候选包、测试渠道与正式渠道分开维护。
 3. `version` 使用用户可见的语义版本号，例如 `1.0.0`。
 4. `buildNumber` 使用平台构建号；测试阶段必须递增。
-5. `storeUrl` 必须是该渠道真实可访问的官方分发地址；未确定时使用 `null`，不得编造。
+5. `storeUrl` 必须是该渠道真实可访问的官方分发地址；`releaseCandidate` 没有官方分发地址时使用 `null`，不得编造。
 6. 修改 JSON 后必须通过 JSON 解析和 Schema 校验，并在项目历史中记录变更原因。
+
+## 候选包阶段边界
+
+`releaseCandidate` 可以用于验证：
+
+- 当前版本读取；
+- 当前构建号读取；
+- 远程版本源访问；
+- `latest` / `update-available` / `unavailable` 状态转换。
+
+如果 `releaseCandidate.storeUrl` 为 `null`，只能验证检查更新状态，不能验证官方升级跳转。客户端应在用户点击升级时提示当前测试构建没有可用的官方升级渠道，不得伪造商店跳转。

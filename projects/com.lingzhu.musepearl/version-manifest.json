@@ -3,6 +3,11 @@
   "displayName": "MusePearl",
   "platforms": {
     "ios": {
+      "releaseCandidate": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
       "testflight": {
         "version": null,
         "buildNumber": null,
@@ -15,6 +20,11 @@
       }
     },
     "android": {
+      "releaseCandidate": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
       "internalTesting": {
         "version": null,
         "buildNumber": null,
