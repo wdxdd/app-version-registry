@@ -1,0 +1,30 @@
+{
+  "projectId": "com.lingzhu.musepearl",
+  "displayName": "MusePearl",
+  "platforms": {
+    "ios": {
+      "testflight": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
+      "production": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      }
+    },
+    "android": {
+      "internalTesting": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
+      "production": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      }
+    }
+  }
+}

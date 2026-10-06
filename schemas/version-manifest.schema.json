@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/wdxdd/app-version-registry/main/schemas/version-manifest.schema.json",
+  "title": "App Version Manifest",
+  "type": "object",
+  "required": ["projectId", "displayName", "platforms"],
+  "additionalProperties": false,
+  "properties": {
+    "projectId": { "type": "string", "minLength": 1 },
+    "displayName": { "type": "string", "minLength": 1 },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ios": { "$ref": "#/$defs/platformChannels" },
+        "android": { "$ref": "#/$defs/platformChannels" }
+      },
+      "minProperties": 1
+    }
+  },
+  "$defs": {
+    "platformChannels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "testflight": { "$ref": "#/$defs/channel" },
+        "internalTesting": { "$ref": "#/$defs/channel" },
+        "production": { "$ref": "#/$defs/channel" }
+      },
+      "minProperties": 1
+    },
+    "channel": {
+      "type": "object",
+      "required": ["version", "buildNumber", "storeUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "version": { "type": ["string", "null"], "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "buildNumber": { "type": ["string", "null"] },
+        "storeUrl": { "type": ["string", "null"], "format": "uri" }
+      }
+    }
+  }
+}
