@@ -4,8 +4,8 @@
   "platforms": {
     "ios": {
       "releaseCandidate": {
-        "version": null,
-        "buildNumber": null,
+        "version": "1.0.0",
+        "buildNumber": "1",
         "storeUrl": null
       },
       "testflight": {
