@@ -21,7 +21,7 @@ projects/
 
 ## 标准渠道
 
-- 通用候选包：`releaseCandidate`
+- Debug（应用壳）与通用候选包共用：`releaseCandidate`
 - iOS 测试分发：`testflight`
 - Android 测试分发：`internalTesting`
 - 正式分发：`production`

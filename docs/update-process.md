@@ -1,5 +1,16 @@
 # 版本信息更新与验证流程
 
+## 版本清单与客户端解析契约
+
+版本清单必须使用以下 canonical 结构：
+
+```text
+platforms.ios.<channel>
+platforms.android.<channel>
+```
+
+`releaseCandidate`、`testflight`、`internalTesting` 和 `production` 都必须由 Schema 明确定义。修改版本清单或客户端解析时，必须同时执行 JSON 解析、Schema 校验和真实 canonical JSON 读取测试；不能只测试版本比较函数。
+
 ## 渠道阶段
 
 ### 1. Release 候选包

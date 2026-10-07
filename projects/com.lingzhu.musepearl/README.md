@@ -15,6 +15,10 @@
 - iOS：`releaseCandidate`、`testflight`、`production`
 - Android：`releaseCandidate`、`internalTesting`、`production`
 
+## 客户端解析契约
+
+客户端 canonical 读取路径：`platforms.ios.<channel>` / `platforms.android.<channel>`；不得使用顶层 `ios` / `android`。
+
 ## 当前候选包阶段
 
 当前项目本地真机 Release 候选包使用 `releaseCandidate`。候选包可以没有 `storeUrl`，这时只验证版本检查状态，不执行官方商店升级跳转。

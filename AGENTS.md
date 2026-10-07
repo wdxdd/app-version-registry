@@ -32,7 +32,9 @@
 6. 缺少平台、渠道、版本或构建号时，客户端必须返回“暂无法检查”，不得当作“已是最新”。
 7. 版本比较先比较 `version`，同版本时比较 `buildNumber`。
 8. 只有明确为更新可用且有可用 `storeUrl` 时，才允许展示可执行的“去升级”。
-9. `releaseCandidate` 没有 `storeUrl` 时仍可返回“有可用更新”，但点击升级必须提示当前测试构建没有可用的官方升级渠道，不得打开伪造地址。
+9. 版本清单 canonical 路径为 `platforms.ios.<channel>` / `platforms.android.<channel>`；客户端不得依赖顶层 `ios` / `android` 路径。
+10. 只有明确为更新可用且有可用 `storeUrl` 时，才允许展示可执行的“去升级”。
+11. `releaseCandidate` 没有 `storeUrl` 时仍可返回“有可用更新”，但点击升级必须提示当前测试构建没有可用的官方升级渠道，不得打开伪造地址。
 
 ## 修改规则
 
