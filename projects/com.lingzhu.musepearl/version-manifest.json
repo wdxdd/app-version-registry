@@ -5,7 +5,7 @@
     "ios": {
       "releaseCandidate": {
         "version": "1.1.0",
-        "buildNumber": "3",
+        "buildNumber": "4",
         "storeUrl": null
       },
       "testflight": {
