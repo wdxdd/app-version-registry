@@ -3,7 +3,7 @@
 - 项目 ID：`com.lingzhu.musepearl`
 - 显示名称：MusePearl / 灵珠
 - 客户端读取文件：`version-manifest.json`
-- 当前阶段：Release 候选包版本检查配置已建立；真实 TestFlight / Google Play 地址和版本号待实际分发后填写。
+- 当前阶段：iOS TestFlight 上传前版本登记已建立为 `1.1.0 (6)`；真实 TestFlight 地址待 Apple 处理构建并生成链接后填写。
 
 ## 平台标识
 

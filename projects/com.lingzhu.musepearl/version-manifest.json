@@ -9,8 +9,8 @@
         "storeUrl": null
       },
       "testflight": {
-        "version": null,
-        "buildNumber": null,
+        "version": "1.1.0",
+        "buildNumber": "6",
         "storeUrl": null
       },
       "production": {
