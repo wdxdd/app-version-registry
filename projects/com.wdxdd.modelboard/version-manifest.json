@@ -1,0 +1,40 @@
+{
+  "projectId": "com.wdxdd.modelboard",
+  "displayName": "ModelBoard",
+  "platforms": {
+    "ios": {
+      "releaseCandidate": {
+        "version": "1.0.0",
+        "buildNumber": "1",
+        "storeUrl": null
+      },
+      "testflight": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
+      "production": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      }
+    },
+    "android": {
+      "releaseCandidate": {
+        "version": "1.0.0",
+        "buildNumber": "1",
+        "storeUrl": null
+      },
+      "internalTesting": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      },
+      "production": {
+        "version": null,
+        "buildNumber": null,
+        "storeUrl": null
+      }
+    }
+  }
+}
